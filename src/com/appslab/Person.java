@@ -10,9 +10,14 @@ public class Person {
        this.age = age;
        this.balance = balance;
    }
-    public int getBalance() {
-        return balance;
+   public  String getName() { return name; }
+   public  int getAge() { return age; }
+    public int getBalance() { return balance; }
+    public Person() {
+
     }
+
+
 
 }
 
