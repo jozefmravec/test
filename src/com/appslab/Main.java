@@ -8,31 +8,30 @@ public class Main {
 
         //1
         List<Integer> arrayList = new ArrayList<>(Arrays.asList(1, 1, 1, 2, 2, 3, 4, 5));
-        if(arrayList.size() == 0)
-        {
+        if (arrayList.size() == 0) {
             System.out.println("List je prázdny");
-        }
-        else arrayList.forEach(System.out::println);
+        } else arrayList.forEach(System.out::println);
+
 
         //3
         List<Integer> numbers3 = arrayList.stream()
                 .filter(num -> num % 2 != 0)
                 .collect(Collectors.toList());
+                System.out.println(numbers3);
+
+
         //4
-         List<Integer> numbers4 = arrayList.stream()
+        List<Integer> numbers4 = arrayList.stream()
                 .filter(num -> num % 2 == 0)
                 .collect(Collectors.toList());
-
-        System.out.println(numbers3);
-        System.out.println(numbers4);
+                System.out.println(numbers4);
 
 
         //5
-        List<Integer> listik = new ArrayList<>(Arrays.asList(2,3,1,0));
+        List<Integer> listik = new ArrayList<>(Arrays.asList(2, 3, 1, 0));
         listik.stream()
                 .map(num -> num * listik.size())
                 .forEach(System.out::println);
-
 
 
         //6
@@ -42,19 +41,50 @@ public class Main {
                 .mapToInt(Person::getBalance)
                 .sum();
         System.out.println(sorted);
-        //7
-        boolean nonematch = getPeople().stream()
-                .anyMatch(a -> a.getName().contains("a"));
-                System.out.println(nonematch);
 
+
+        //7
+        boolean anymatch = getPeople().stream()
+                .anyMatch(a -> a.getName().contains("a"));
+        System.out.println(anymatch);
+
+
+        //2
+        List<Person> pepege = getPeople();
+        if (pepege.contains(person))
+        {
+            System.out.println("Exist");
+        }
+        else
+        {
+            pepege.add(person);
+        }
+
+
+        //8
+        HashSet<Integer> hs = new HashSet<Integer>(Arrays.asList(1, 1, 1, 2, 2, 3, 4, 5));
+        if (hs.size() == 0) {
+            System.out.println("List je prázdny");
+        } else hs.forEach(System.out::println);
+
+
+        //9
+        HashMap<String, Integer> map = new HashMap<>();
+        map.put("Red", 1);
+        map.put("Green", 2);
+        map.put("Black", 3);
+        map.put("White", 4);
+        System.out.println(map);
 
     }
-    private static List<Person> getPeople() {
-        return List.of(
-                new Person("John", 21, 23000),
-                new Person ("Steve", 32, 40000),
-                new Person ("Martin", 16, 2700)
-        );
+    public static List<Person> getPeople(){
+            List<Person> myList = new ArrayList<>();
+            myList.add(new Person("John", 21,500));
+            myList.add(new Person("Steve", 32, 40000));
+            myList.add(new Person("Martin", 16, 2700));
+            return myList;
+
+
 
 
     }
