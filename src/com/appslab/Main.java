@@ -76,6 +76,9 @@ public class Main {
         map.put("White", 4);
         System.out.println(map);
 
+
+        System.out.println(putIfAbsent());
+
     }
     public static List<Person> getPeople(){
             List<Person> myList = new ArrayList<>();
@@ -87,5 +90,14 @@ public class Main {
 
 
 
+    }
+    //10
+    private static HashMap<String, Integer> putIfAbsent() {
+        HashMap<String, Integer> mapStudent = new HashMap<>();
+        mapStudent.put("Pep", 800);
+        mapStudent.put("Nicolas",2000);
+        mapStudent.put("Adam", 400);
+
+        return mapStudent;
     }
 }
