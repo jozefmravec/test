@@ -1,4 +1,4 @@
-package com.appslab;
+package com.appslab.model;
 
 public class Person {
    String name;

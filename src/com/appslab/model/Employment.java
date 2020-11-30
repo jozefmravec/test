@@ -1,4 +1,4 @@
-package com.appslab;
+package com.appslab.model;
 
 public enum Employment {
     DRIVER("Driver"),
